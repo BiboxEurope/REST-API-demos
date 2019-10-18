@@ -2,7 +2,7 @@
 let CryptoJS = require("crypto-js");
 let request = require("request");
 
-const MARKET_URI = 'https://api.bibox.cc/v1/mdata';
+const MARKET_URI = 'https://api.bibox.cc/v1/api';
 const TRANSFER_URI = 'https://api.bibox.cc/v1/transfer';
 const TRADE_URI = 'https://api.bibox.cc/v1/orderpending';
 
