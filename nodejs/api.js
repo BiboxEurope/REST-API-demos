@@ -289,23 +289,23 @@ let getUserAssets = function () {
 
 let doTest = function () {
     //depth
-    getDepth('LTC_BTC', 10);
+    getDepth('ETH_BTC', 10);
     //deals
-    getDeals('LTC_BTC', 10);
+    getDeals('ETH_BTC', 10);
     //ticker
-    getTicker('LTC_BTC');
+    getTicker('ETH_BTC');
     //market
-    getMarket('LTC_BTC');
+    getMarket('ETH_BTC');
     //all markets
     getMarketAll();
     //kline
-    getKline('LTC_BTC', '1min', 10);
+    getKline('ETH_BTC', '1min', 10);
 
 
     // user order pending
-    getUserOrderPending('EOS_BTC', 0, 1, 10);
+    getUserOrderPending('ETH_BTC', 0, 1, 10);
     // user order history
-    getUserOrderHistory('BIX_BTC', 0, 1, 10);
+    getUserOrderHistory('ETH_BTC', 0, 1, 10);
     // user assets
     getUserAssets();
     // get order info by order id
@@ -316,7 +316,7 @@ let doTest = function () {
         account_type: 0,
         order_type: 2,
         order_side: 1,
-        pair: 'BIX_BTC',
+        pair: 'ETH_BTC',
         price: 0.00001688,
         amount: 1
     };
