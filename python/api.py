@@ -23,7 +23,7 @@ api_secret = 'your api_secret'
 account_type = 0 
 order_type = 2 
 order_side = 1 
-pair = 'BIX_ETH'
+pair = 'BTC_CHF'
 price = 0.00081600 
 amount = 0.1
 
