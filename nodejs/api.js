@@ -326,4 +326,4 @@ let doTest = function () {
     doCancelTrade("9788952022908451");//orders_id
 };
 
-// doTest();
+doTest();
