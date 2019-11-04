@@ -1,4 +1,3 @@
-
 let CryptoJS = require("crypto-js");
 let request = require("request");
 
@@ -7,8 +6,10 @@ const TRANSFER_URI = 'https://api.bibox.cc/v1/transfer';
 const TRADE_URI = 'https://api.bibox.cc/v1/orderpending';
 
 let doPost = function (url, params, callBack) {
-    request.post({url: url, form: params}, function (error, response, body) {
-        if (!error && response && response.statusCode===200) {
+    request.post({
+        url: url, form: params, headers: {'X-Ca-Nonce': Date.now()}
+    }, function (error, response, body) {
+        if (!error && response && response.statusCode === 200) {
             let result = JSON.parse(body);
             callBack(result);
         } else {
@@ -19,8 +20,8 @@ let doPost = function (url, params, callBack) {
 };
 
 let doGet = function (url, callBack) {
-    request.get({url: url}, function (error, response, body) {
-        if (!error && response && response.statusCode===200) {
+    request.get({url: url, headers: {'X-Ca-Nonce': Date.now()}}, function (error, response, body) {
+        if (!error && response && response.statusCode === 200) {
             let result = JSON.parse(body);
             callBack(result);
         } else {

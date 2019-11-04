@@ -1,6 +1,13 @@
 import hmac
+import time
 import hashlib
 import json, requests
+
+t = time.time()
+
+headers={
+  "X-Ca-Nonce": int(round(t * 1000))
+}
 
 def getSign(data,secret):
     result = hmac.new(secret.encode("utf-8"), data.encode("utf-8"), hashlib.md5).hexdigest()
@@ -9,7 +16,7 @@ def getSign(data,secret):
 def doApiRequestWithApikey(url, cmds, api_key, api_secret):
     s_cmds = json.dumps(cmds)
     sign = getSign(s_cmds,api_secret)
-    r = requests.post(url, data={'cmds': s_cmds, 'apikey': api_key,'sign':sign})
+    r = requests.post(url, data={'cmds': s_cmds, 'apikey': api_key,'sign':sign},headers=headers)
     print(r.text)
 
 def post_order(api_key,api_secret,cmds):
